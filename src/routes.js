@@ -13,7 +13,7 @@ const { welcomeRouteHandler } = require("./controllers/fake.controller");
 
 router.get("/candidates/:employerId/:processId", welcomeRouteHandler);
 
-router.post("/candidates/verify", (req, res, next) => {
+router.post("/verify", (req, res, next) => {
   try {
     // const {
     //   state,
@@ -26,7 +26,8 @@ router.post("/candidates/verify", (req, res, next) => {
     //   profession,
     //   credentialOwner: { employerId },
     // });
-    return res.send({ message: "test lambda post queue" });
+    const { body } = req;
+    return res.send({ message: "test lambda post queue", body });
   } catch (error) {
     next(error);
   }
