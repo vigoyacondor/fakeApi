@@ -15,17 +15,7 @@ router.get("/candidates/:employerId/:processId", welcomeRouteHandler);
 
 router.post("/verify", (req, res, next) => {
   try {
-    // const {
-    //   state,
-    //   profession,
-    //   credentialOwner: { employerId },
-    // } = req.body;
-
-    // console.log({
-    //   state,
-    //   profession,
-    //   credentialOwner: { employerId },
-    // });
+    console.log(req);
     const { body } = req;
     return res.send({ message: "test lambda post queue", body });
   } catch (error) {
