@@ -1,0 +1,25 @@
+{
+  "name": "fake-api",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node ./index.js",
+    "start_dev": "nodemon ./index.js",
+    "test": "jest",
+    "install_matchbox": "npm i @condor-labs/matchbox"
+  },
+  "dependencies": {
+    "@condor-labs/health-middleware": "~1.0.0",
+    "array-paginator": "^1.5.2",
+    "debug": "~2.6.9",
+    "dotenv": "~8.2.0",
+    "express": "~4.16.1",
+    "express-router-group": "~0.1.4",
+    "express-validator": "^6.13.0",
+    "http-errors": "^1.6.3",
+    "pagination-js": "^2.0.2"
+  },
+  "devDependencies": {
+    "jest": "~27.2.3",
+    "nodemon": "~2.0.13"
+  }
+}

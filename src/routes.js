@@ -1,0 +1,35 @@
+// To write your routes in a more fancy way use express-router-group: https://www.npmjs.com/package/express-router-group
+// However, if you consider that your application is going to grow a lot, it is advisable to create a routes folder and store the routes by file.
+
+require("express-router-group");
+const express = require("express");
+const router = express.Router();
+
+// Middlewares
+const exampleMiddlewareMock = require("./middlewares/example.middleware");
+
+// Controllers
+const { welcomeRouteHandler } = require("./controllers/fake.controller");
+
+router.get("/candidates/:employerId/:processId", welcomeRouteHandler);
+
+router.post("/candidates/verify", (req, res, next) => {
+  try {
+    // const {
+    //   state,
+    //   profession,
+    //   credentialOwner: { employerId },
+    // } = req.body;
+
+    // console.log({
+    //   state,
+    //   profession,
+    //   credentialOwner: { employerId },
+    // });
+    return res.send({ message: "test lambda post queue" });
+  } catch (error) {
+    next(error);
+  }
+});
+
+module.exports = router;
